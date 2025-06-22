@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <button onclick="buttonOne()">Filter not divisible by 3</button>
+    <button onclick="buttonTwo()">Extend to 150</button>
+    <button onclick="buttonThree()">Add 3 to each number</button>
+    <button onclick="buttonFour()">Show index 20 to 40</button>
+    <button onclick="buttonFive()">Shuffle & Sort Descending</button>
+
+    <script>
+        function createArray0to100() {
+            return Array.from({length: 101}, (_, i) => i);
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function buttonOne() {
+            let arr = createArray0to100();
+            let filtered = arr.filter(num => num % 3 !== 0);
+            console.log("Filtered (not divisible by 3):", filtered);
+        }
+
+        function buttonTwo() {
+            let arr = createArray0to100();
+            let extra = Array.from({length: 51}, (_, i) => i + 100);
+            arr = arr.concat(extra);
+            console.log("Extended to 150:", arr);
+        }
+
+        function buttonThree() {
+            let arr = createArray0to100();
+            let added = arr.map(num => num + 3);
+            console.log("Added 3 to each:", added);
+        }
+
+        function buttonFour() {
+            let arr = createArray0to100();
+            let sliced = arr.slice(20, 41);
+            console.log("Index 20 to 40:", sliced);
+        }
+
+        function buttonFive() {
+            let arr = createArray0to100();
+            shuffleArray(arr);
+            console.log("Shuffled:", arr);
+            arr.sort((a, b) => b - a);
+            console.log("Sorted Descending:", arr);
+        }
+    </script>
+</body>
+</html>
