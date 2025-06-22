@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+  <button id="SUM_Button">Click me</button>
+
+  <script>
+    document.getElementById("SUM_Button").addEventListener("click", function() {
+      
+      const numbers = [];
+      for (let i = 0; i <= 100; i++) {
+        numbers.push(i);
+      }
+
+      let sum = 0;
+      for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+      }
+
+      console.log("Summtion:", sum);
+    });
+  </script>
+
+</body>
+</html>
