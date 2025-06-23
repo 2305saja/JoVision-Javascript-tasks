@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+    <label for="nameField">Enter Your Name:</label><br>
+    <input type="text" id="nameField" placeholder="Your Name" title="Name"><hr><hr>
+
+    <label for="ageField">Enter Your Age:</label><br>
+    <input type="text" id="ageField" placeholder="Your Age in years" title="Age"><hr><hr>
+
+    <button onclick="submitForm()">Submit Info</button>
+
+    <script>
+        function submitForm() {
+            const name = document.getElementById("nameField").value;
+            const age = document.getElementById("ageField").value;
+            const timestamp = new Date().toLocaleString();
+
+            const userInfo = {
+                name,
+                age,
+                timestamp
+            };
+
+            const { name: userName, age: userAge, timestamp: time } = userInfo;
+
+            alert(
+                `Your Name Is: ${userName}\n` +
+                `Your Age Is: ${userAge}\n` +
+                `Timestamp: ${time}`
+            );
+        }
+    </script>
+
+</body>
+</html>
