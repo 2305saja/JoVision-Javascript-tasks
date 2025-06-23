@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <button id="ipButton" onclick="getIP()">Get IP</button>
+
+    <script>
+        function getIP() {
+            const button = document.getElementById("ipButton");
+
+            fetch("https://api.ipify.org/")
+                .then(response => response.text())
+                .then(ip => {
+                    button.textContent = ip;
+                })
+                .catch(error => {
+                    button.textContent = "Error";
+                    console.error("Error fetching IP:", error);
+                });
+        }
+    </script>
+</body>
+</html>
