@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+    <input type="text" id="nameField" placeholder="Name" title="Name"><br><br>
+    <button onclick="submitForm()">Submit</button>
+
+    <script>
+        function submitForm() {
+            const Name = document.getElementById("nameField").value;
+
+            fetch(`https://api.agify.io?name=${Name}`)
+                .then(response => response.json())
+                .then(data => {
+                    const { name, age } = data;
+                    alert("Your Name Is: " + Name + "\nYour Age Is: " + age);
+                });
+        }
+    </script>
+
+</body>
+</html>
